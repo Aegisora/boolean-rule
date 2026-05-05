@@ -76,6 +76,9 @@ class BooleanRuleTest extends TestCase
             'context value - negative integer' => [
                 'context' => Context::create(-1),
             ],
+            'context value - zero float' => [
+                'context' => Context::create(0.0),
+            ],
         ];
     }
 
