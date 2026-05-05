@@ -110,6 +110,9 @@ class BooleanRuleTest extends TestCase
                     }
                 ),
             ],
+            'context value - resource' => [
+                'context' => Context::create(tmpfile()),
+            ],
         ];
     }
 
