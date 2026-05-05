@@ -8,6 +8,7 @@ use Aegisora\RuleContract\Models\Result;
 use Aegisora\RuleContract\RuleInterface;
 use Aegisora\Rules\BooleanRule;
 use PHPUnit\Framework\TestCase;
+use stdClass;
 
 class BooleanRuleTest extends TestCase
 {
@@ -99,6 +100,9 @@ class BooleanRuleTest extends TestCase
             ],
             'context value - empty array' => [
                 'context' => Context::create([]),
+            ],
+            'context value - object' => [
+                'context' => Context::create(new stdClass()),
             ],
         ];
     }
