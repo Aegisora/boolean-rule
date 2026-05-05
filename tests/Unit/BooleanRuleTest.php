@@ -35,7 +35,15 @@ class BooleanRuleTest extends TestCase
 
     public static function getTruthyTestProvidedData(): array
     {
-        return [];
+        return [
+            'context value - true' => [
+                'context' => Context::create(true),
+                'expectedResult' => [
+                    'isValid' => true,
+                    'failedRuleCode' => null,
+                ],
+            ],
+        ];
     }
 
     private static function assertActualResultEqualsExpected(
