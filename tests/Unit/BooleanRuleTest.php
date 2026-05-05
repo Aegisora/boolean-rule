@@ -104,6 +104,12 @@ class BooleanRuleTest extends TestCase
             'context value - object' => [
                 'context' => Context::create(new stdClass()),
             ],
+            'context value - callable' => [
+                'context' => Context::create(
+                    static function () {
+                    }
+                ),
+            ],
         ];
     }
 
