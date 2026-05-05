@@ -56,6 +56,39 @@ class BooleanRuleTest extends TestCase
     }
 
     /**
+     * @dataProvider getFalsyTestProvidedData
+     */
+    public function testFalsy(
+        Context $context,
+        array $expectedResult
+    ): void {
+        self::assertActualResultEqualsExpected(
+            BooleanRule::createFalsy()->validate($context),
+            $expectedResult
+        );
+    }
+
+    public static function getFalsyTestProvidedData(): array
+    {
+        return [
+            'context value - false' => [
+                'context' => Context::create(false),
+                'expectedResult' => [
+                    'isValid' => true,
+                    'failedRuleCode' => null,
+                ],
+            ],
+            'context value - true' => [
+                'context' => Context::create(true),
+                'expectedResult' => [
+                    'isValid' => false,
+                    'failedRuleCode' => 'boolean_rule',
+                ],
+            ],
+        ];
+    }
+
+    /**
      * @dataProvider getInvalidContextProvidedData
      */
     public function testTruthyThrowsInvalidRuleContextException(Context $context): void
