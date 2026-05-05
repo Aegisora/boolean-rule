@@ -21,7 +21,7 @@ class BooleanRuleTest extends TestCase
     }
 
     /**
-     * @dataProvider getBooleanRuleTestProvidedData
+     * @dataProvider getTruthyTestProvidedData
      */
     public function testTruthy(
         Context $context,
@@ -33,7 +33,7 @@ class BooleanRuleTest extends TestCase
         );
     }
 
-    public static function getBooleanRuleTestProvidedData(): array
+    public static function getTruthyTestProvidedData(): array
     {
         return [];
     }
