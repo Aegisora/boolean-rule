@@ -6,6 +6,14 @@ use Aegisora\RuleContract\Exceptions\InvalidRuleContextException;
 
 class BooleanRule
 {
+    private bool $expected;
+
+    private function __construct(
+        bool $expected
+    ) {
+        $this->expected = $expected;
+    }
+
     /**
      * @param mixed $value
      * @throws InvalidRuleContextException
