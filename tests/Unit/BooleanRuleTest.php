@@ -2,6 +2,7 @@
 
 namespace Aegisora\Rules\Tests\Unit;
 
+use Aegisora\RuleContract\Exceptions\InvalidRuleContextException;
 use Aegisora\RuleContract\Models\Context;
 use Aegisora\RuleContract\Models\Result;
 use Aegisora\RuleContract\RuleInterface;
@@ -51,6 +52,21 @@ class BooleanRuleTest extends TestCase
                 ],
             ],
         ];
+    }
+
+    /**
+     * @dataProvider getInvalidContextProvidedData
+     */
+    public function testTruthyThrowsInvalidRuleContextException(Context $context): void
+    {
+        $this->expectException(InvalidRuleContextException::class);
+
+        BooleanRule::createTruthy()->validate($context);
+    }
+
+    public static function getInvalidContextProvidedData(): array
+    {
+        return [];
     }
 
     private static function assertActualResultEqualsExpected(
