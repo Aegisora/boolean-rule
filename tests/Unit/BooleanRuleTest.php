@@ -82,6 +82,9 @@ class BooleanRuleTest extends TestCase
             'context value - positive float' => [
                 'context' => Context::create(0.01),
             ],
+            'context value - negative float' => [
+                'context' => Context::create(-0.01),
+            ],
         ];
     }
 
