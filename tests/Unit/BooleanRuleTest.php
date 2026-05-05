@@ -43,6 +43,13 @@ class BooleanRuleTest extends TestCase
                     'failedRuleCode' => null,
                 ],
             ],
+            'context value - false' => [
+                'context' => Context::create(false),
+                'expectedResult' => [
+                    'isValid' => false,
+                    'failedRuleCode' => 'boolean_rule',
+                ],
+            ],
         ];
     }
 
