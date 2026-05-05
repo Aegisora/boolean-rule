@@ -91,6 +91,9 @@ class BooleanRuleTest extends TestCase
             'context value - string with zero' => [
                 'context' => Context::create('0'),
             ],
+            'context value - empty string' => [
+                'context' => Context::create(''),
+            ],
         ];
     }
 
