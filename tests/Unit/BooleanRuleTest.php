@@ -97,6 +97,9 @@ class BooleanRuleTest extends TestCase
             'context value - not empty array' => [
                 'context' => Context::create([123,]),
             ],
+            'context value - empty array' => [
+                'context' => Context::create([]),
+            ],
         ];
     }
 
