@@ -14,6 +14,11 @@ class BooleanRule
         $this->expected = $expected;
     }
 
+    public static function createTruthy(): self
+    {
+        return new self(true);
+    }
+
     /**
      * @param mixed $value
      * @throws InvalidRuleContextException
