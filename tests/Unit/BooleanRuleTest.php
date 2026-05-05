@@ -65,6 +65,16 @@ class BooleanRuleTest extends TestCase
         BooleanRule::createTruthy()->validate($context);
     }
 
+    /**
+     * @dataProvider getInvalidContextProvidedData
+     */
+    public function testFalsyThrowsInvalidRuleContextException(Context $context): void
+    {
+        $this->expectException(InvalidRuleContextException::class);
+
+        BooleanRule::createFalsy()->validate($context);
+    }
+
     public static function getInvalidContextProvidedData(): array
     {
         return [
