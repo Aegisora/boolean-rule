@@ -19,6 +19,11 @@ class BooleanRule
         return new self(true);
     }
 
+    public static function createFalsy(): self
+    {
+        return new self(false);
+    }
+
     /**
      * @param mixed $value
      * @throws InvalidRuleContextException
