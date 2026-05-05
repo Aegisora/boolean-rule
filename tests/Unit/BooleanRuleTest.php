@@ -2,6 +2,8 @@
 
 namespace Aegisora\Rules\Tests\Unit;
 
+use Aegisora\RuleContract\Models\Context;
+use Aegisora\RuleContract\Models\Result;
 use Aegisora\RuleContract\RuleInterface;
 use Aegisora\Rules\BooleanRule;
 use PHPUnit\Framework\TestCase;
@@ -16,5 +18,31 @@ class BooleanRuleTest extends TestCase
     public function testCreateFalsy(): void
     {
         self::assertInstanceOf(RuleInterface::class, BooleanRule::createFalsy());
+    }
+
+    /**
+     * @dataProvider getBooleanRuleTestProvidedData
+     */
+    public function testTruthy(
+        Context $context,
+        array $expectedResult
+    ): void {
+        self::assertActualResultEqualsExpected(
+            BooleanRule::createTruthy()->validate($context),
+            $expectedResult
+        );
+    }
+
+    public static function getBooleanRuleTestProvidedData(): array
+    {
+        return [];
+    }
+
+    private static function assertActualResultEqualsExpected(
+        Result $result,
+        array $expectedResult
+    ): void {
+        self::assertEquals($expectedResult['isValid'], $result->isValid());
+        self::assertEquals($expectedResult['failedRuleCode'], $result->getFailedRuleCode());
     }
 }
