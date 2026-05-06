@@ -111,3 +111,20 @@ Any other type (`int`, `string`, `null`, etc.) will throw an exception:
 `Aegisora\RuleContract\Exceptions\InvalidRuleContextException`
 
 ---
+
+## 🏛️ Architecture
+
+This package relies on `aegisora/rule-contract`.
+
+Validation flow:
+
+1. `validate()` is called
+2. `Context` is passed
+3. `executeValidate()` is executed
+4. Value type is validated (`bool` only)
+5. Strict comparison (`===`) is performed
+6. A `Result` is returned
+
+All logic is encapsulated within the base `Rule` abstraction.
+
+---
