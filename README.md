@@ -50,3 +50,39 @@ Supported values:
 Any other value will result in an exception.
 
 ---
+
+## 🏗️ Basic Usage
+
+### ✅ Validate `true`
+
+```php
+use Aegisora\Rules\BooleanRule;
+use Aegisora\RuleContract\Models\Context;
+
+$result = BooleanRule::createTruthy()->validate(Context::create(true));
+
+if ($result->isValid()) {
+    // value is true (as expected)
+} else {
+    // value is not true
+}
+```
+
+---
+
+### ❌ Validate `false`
+
+```php
+use Aegisora\Rules\BooleanRule;
+use Aegisora\RuleContract\Models\Context;
+
+$result = BooleanRule::createFalsy()->validate(Context::create(false));
+
+if ($result->isValid()) {
+    // value is false (as expected)
+} else {
+    // value is not false
+}
+```
+
+---
