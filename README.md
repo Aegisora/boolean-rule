@@ -98,3 +98,16 @@ BooleanRule::createFalsy();
 - `createFalsy()` — expects `false`
 
 ---
+
+## ⚠️ Validation Rules
+
+The input value must strictly be a boolean:
+
+- `true`
+- `false`
+
+Any other type (`int`, `string`, `null`, etc.) will throw an exception:
+
+`Aegisora\RuleContract\Exceptions\InvalidRuleContextException`
+
+---
