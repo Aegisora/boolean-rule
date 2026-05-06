@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1777997933">
-  <project timestamp="1777997933">
+<coverage generated="1778086269">
+  <project timestamp="1778086269">
     <file name="/home/runner/work/boolean-rule/boolean-rule/src/BooleanRule.php">
       <class name="Aegisora\Rules\BooleanRule" namespace="global">
         <metrics complexity="7" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="15" coveredelements="15"/>
