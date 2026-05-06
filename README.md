@@ -32,3 +32,21 @@ composer require aegisora/boolean-rule
 ```
 
 ---
+
+## 🚀 Core Concept
+
+This package performs boolean validation:
+
+- accepts a value via `Context`
+- ensures the value is of type `bool`
+- compares it with the expected value
+- returns a standardized `Result`
+
+Supported values:
+
+- `true`
+- `false`
+
+Any other value will result in an exception.
+
+---
