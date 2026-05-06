@@ -24,3 +24,11 @@ The package is built on top of `aegisora/rule-contract` and follows its validati
 - 🔹 Built-in input validation
 
 ---
+
+## 📦 Installation
+
+```shell
+composer require aegisora/boolean-rule
+```
+
+---
