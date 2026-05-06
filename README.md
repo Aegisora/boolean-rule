@@ -86,3 +86,15 @@ if ($result->isValid()) {
 ```
 
 ---
+
+## 🧩 Factory Methods
+
+```php
+BooleanRule::createTruthy();
+BooleanRule::createFalsy();
+```
+
+- `createTruthy()` — expects `true`
+- `createFalsy()` — expects `false`
+
+---
